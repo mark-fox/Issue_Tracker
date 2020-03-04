@@ -53,10 +53,19 @@ export default class IssuesList extends Component {
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                     <tr>
+{/*TODO rearrange as needed*/}
+                        <th>Issue</th>
                         <th>Subject</th>
-                        <th>Priority</th>
+                        <th>Status</th>
                         <th>Assigned To</th>
-                        <th>Description</th>
+                        <th>Overdue Days</th>
+                        <th>Priority</th>
+                        <th>Last Updated</th>
+                        <th>Due Date</th>
+                        <th>Created Date</th>
+                        <th>Created By</th>
+                        <th>Closed Date</th>
+{/*TODO removed description since probably not needed in this part*/}
                     </tr>
                     </thead>
                     <tbody>

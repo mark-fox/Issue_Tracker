@@ -13,10 +13,17 @@ export default class NewIssue extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
+            issueNumber: 0,
             subject: "",
+            status: "",
             priority: "",
             assignedTo: "",
+            overdueDays: 0,
             description: "",
+            lastUpdated: null,
+            dueDate: null,
+            createdDate: null,
+            closedDate: null,
             closed: false
         }
     }
@@ -41,10 +48,18 @@ export default class NewIssue extends Component {
         e.preventDefault();
 
         const newIssue = {
+// TODO implement issue number
+            issueNumber: 5,
             subject: this.state.subject,
+            status: this.state.status,
             priority: this.state.priority,
             assignedTo: this.state.assignedTo,
+// TODO might need to calculate beforehand
+            overdueDays: this.state.overdueDays,
             description: this.state.description,
+            lastUpdated: new Date(),
+            dueDate: this.state.dueDate,
+            createdDate: new Date(),
             closed: this.state.closed
         };
 
@@ -54,10 +69,18 @@ export default class NewIssue extends Component {
             });
 
         this.setState({
+// TODO extract object to interface
+            issueNumber: 0,
             subject: "",
+            status: "",
             priority: "",
             assignedTo: "",
+            overdueDays: 0,
             description: "",
+            lastUpdated: null,
+            dueDate: null,
+            createdDate: null,
+            closedDate: null,
             closed: false
         })
     }

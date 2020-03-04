@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ba3b52b-21fc-4ab5-af00-12ec9ff47237" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/issueModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/issuesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/newIssue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/updateIssue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/issueModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/issueModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/issuesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/issuesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/newIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/newIssue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/updateIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/updateIssue.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +81,18 @@
       <workItem from="1582852047153" duration="684000" />
       <workItem from="1582933553792" duration="7086000" />
       <workItem from="1583012349126" duration="8415000" />
-      <workItem from="1583099266369" duration="2009000" />
+      <workItem from="1583099266369" duration="3452000" />
+      <workItem from="1583193170228" duration="600000" />
+      <workItem from="1583288297167" duration="2807000" />
     </task>
+    <task id="LOCAL-00001" summary="Base commit">
+      <created>1583101512951</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583101512951</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,5 +110,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base commit" />
   </component>
 </project>

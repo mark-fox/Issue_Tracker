@@ -12,10 +12,17 @@ export default class UpdateIssue extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
+            issueNumber: 0,
             subject: "",
+            status: "",
             priority: "",
             assignedTo: "",
+            overdueDays: 0,
             description: "",
+            lastUpdated: null,
+            dueDate: null,
+            createdDate: null,
+            closedDate: null,
             closed: false
         }
     }
@@ -55,10 +62,12 @@ export default class UpdateIssue extends Component {
     onSubmit(e) {
         e.preventDefault();
         const obj = {
+// TODO not sure if need to update all values here
             subject: this.state.subject,
             priority: this.state.priority,
             assignedTo: this.state.assignedTo,
             description: this.state.description,
+            lastUpdated: new Date(),
             closed: this.state.closed
         };
         axios.post('http://localhost:4000/issuesroute/edit' + this.props.match.params.id, obj)
