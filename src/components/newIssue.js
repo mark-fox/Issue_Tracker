@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import DatePicker from "react-datepicker/es";
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default class NewIssue extends Component {
     constructor(props) {
@@ -10,6 +13,7 @@ export default class NewIssue extends Component {
         this.onChangePriority = this.onChangePriority.bind(this);
         this.onChangeAssignedTo = this.onChangeAssignedTo.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeDueDate = this.onChangeDueDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -21,7 +25,7 @@ export default class NewIssue extends Component {
             overdueDays: 0,
             description: "",
             lastUpdated: null,
-            dueDate: null,
+            dueDate: new Date(),
             createdDate: null,
             closedDate: null,
             closed: false
@@ -44,9 +48,14 @@ export default class NewIssue extends Component {
         this.setState({description: e.target.value});
     }
 
+    onChangeDueDate(e) {
+        this.setState({dueDate: e});
+        console.log(this.state.dueDate);
+    }
+
     onSubmit(e) {
         e.preventDefault();
-
+// TODO add check for past dates either here or onChange
         const newIssue = {
 // TODO implement issue number
             issueNumber: 5,
@@ -113,8 +122,16 @@ export default class NewIssue extends Component {
                         <textarea className="form-control" value={this.state.description} onChange={this.onChangeDescription}></textarea>
                     </div>
                     <div className="form-group">
+                        <label>Due Date: </label>
+                        <DatePicker
+                            selected={this.state.dueDate}
+                            onChange={this.onChangeDueDate}
+                        />
+                    </div>
+                    <div className="form-group">
                         <input type="submit" value="Create New Issue" className="btn btn-primary" />
                     </div>
+{/*TODO add a cancel button*/}
                 </form>
             </div>
         )
