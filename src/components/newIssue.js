@@ -74,8 +74,7 @@ export default class NewIssue extends Component {
             closed: this.state.closed
         };
 
-        axios.post(myConstants.localUrl + myConstants.serverRouteAdd, newIssue)
-        // axios.post('http://localhost:4000/issuesroute/add', newIssue)
+        axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
             .then(function(res) {
                 console.log(res.data);
             });
@@ -99,6 +98,7 @@ export default class NewIssue extends Component {
 
     render() {
         return (
+// TODO modify the size of fields
             <div style={{marginTop: 10}}>
                 <h3>New Issue</h3>
                 <form onSubmit={this.onSubmit}>
@@ -106,13 +106,18 @@ export default class NewIssue extends Component {
                         <label>Subject: </label>
                         <input type="text" className="form-control" value={this.state.subject} onChange={this.onChangeSubject}/>
                     </div>
+
                     <div className="form-group">
                         <label>Priority: </label>
 {/*TODO add bootstrap and test*/}
                         <select value={this.state.priority} onChange={this.onChangePriority}>
-                            <option>Test</option>
+                        {/*    <option>Test</option>*/}
+                            {myConstants.priorityList.map(({value, label}) =>
+                                <option value = {value}>{label}</option>
+                            )}
                         </select>
                     </div>
+
                     <div className="form-group">
                         <label>Assign To: </label>
 {/*TODO query all users and add this here*/}
@@ -120,6 +125,7 @@ export default class NewIssue extends Component {
                             <option>TestUser</option>
                         </select>
                     </div>
+
                     <div className="form-group">
                         <label>Description: </label>
                         <textarea className="form-control" value={this.state.description} onChange={this.onChangeDescription}></textarea>

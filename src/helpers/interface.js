@@ -19,10 +19,33 @@ const serverRoute = 'issuesroute/';
 const serverRouteAdd = 'add/';
 const serverRouteEdit = 'edit/';
 
+
+// "ENUMS"
+// Status
+const statusList = [
+// TODO might want value to be int later on if used in a switch statement
+    {value: 'Open', label: 'Open'},
+    {value: 'Closed', label: 'Closed'},
+    {value: 'Inactive', label: 'Inactive'}
+];
+
+// Priority
+const priorityList = [
+    {value: 'Low', label: 'Low'},
+    {value: 'Medium', label: 'Medium'},
+    {value: 'High', label: 'High'},
+    {value: 'Critical', label: 'Critical'}
+];
+
+
+
+
 module.exports = {
     cleanState,
     localUrl,
     serverRoute,
     serverRouteAdd,
-    serverRouteEdit
+    serverRouteEdit,
+    statusList,
+    priorityList
 };

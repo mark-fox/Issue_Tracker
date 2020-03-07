@@ -31,32 +31,42 @@ export default class IssuesList extends Component {
     }
 
     componentDidMount() {
-        axios.get(myConstants.localUrl + myConstants.serverRoute)
-            // 'http://localhost:4000/issuesroute/')
-            .then(res => {
-                this.setState({ allIssues: res.data });
-            })
-            .catch(function(err) {
-                console.log(err);
-            })
+        // axios.get(myConstants.localUrl + myConstants.serverRoute)
+        //     .then(res => {
+        //         this.setState({ allIssues: res.data });
+        //     })
+        //     .catch(function(err) {
+        //         console.log(err);
+        //     })
+        this.issueListCall();
     }
 
     componentDidUpdate() {
 // TODO extract into method since same as componentDidMount
-        axios.get(myConstants.localUrl + myConstants.serverRoute)
-            // 'http://localhost:4000/issuesroute/')
-            .then(res => {
-                this.setState({ allIssues: res.data });
-            })
-            .catch(function(err) {
-                console.log(err);
-            })
+//         axios.get(myConstants.localUrl + myConstants.serverRoute)
+//             .then(res => {
+//                 this.setState({ allIssues: res.data });
+//             })
+//             .catch(function(err) {
+//                 console.log(err);
+//             })
+        this.issueListCall();
     }
 
     getIssueList() {
         return this.state.allIssues.map(function(currentIssue, i) {
             return <Issue issue={currentIssue} key={i} />;
         })
+    }
+
+    issueListCall() {
+        axios.get(myConstants.localUrl + myConstants.serverRoute)
+            .then(res => {
+                this.setState({ allIssues: res.data });
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
     }
 
     render() {
@@ -67,6 +77,7 @@ export default class IssuesList extends Component {
                     <thead>
                     <tr>
 {/*TODO rearrange as needed*/}
+{/*TODO extract into 'enum' and loop over*/}
                         <th>Issue</th>
                         <th>Subject</th>
                         <th>Status</th>
