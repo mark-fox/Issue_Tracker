@@ -14,14 +14,14 @@ let cleanState = {
     closed: false
 };
 
-const url = 'http://localhost:4000/';
+const localUrl = 'http://localhost:4000/';
 const serverRoute = 'issuesroute/';
 const serverRouteAdd = 'add/';
 const serverRouteEdit = 'edit/';
 
 module.exports = {
     cleanState,
-    url,
+    localUrl,
     serverRoute,
     serverRouteAdd,
     serverRouteEdit

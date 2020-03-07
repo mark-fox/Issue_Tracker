@@ -2,14 +2,25 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+const myConstants = require('../helpers/interface');
 const Issue = props => (
+// TODO rearrange columns as needed
     <tr>
 {/*TODO add Link here for issue number*/}
 {/*        <Link to={"/update/" + props.issue._id}>{props.issue.issueNumber}</Link>*/}
+        <td>issue placeholder</td>
         <td>{props.issue.subject}</td>
-        <td>{props.issue.priority}</td>
+        <td>{props.issue.status}</td>
         <td>{props.issue.assignedTo}</td>
-        <td>{props.issue.description}</td>
+        <td>{props.issue.overdueDays}</td>
+        <td>{props.issue.priority}</td>
+{/*TODO format dates probably*/}
+        <td>{props.issue.lastUpdated}</td>
+        <td>{props.issue.dueDate}</td>
+        <td>{props.issue.createdDate}</td>
+        <td>{props.issue.createdBy}</td>
+{/*TODO might not want closedDate; seems unnecessary*/}
+        <td>{props.issue.closedDate}</td>
     </tr>
 );
 
@@ -20,7 +31,8 @@ export default class IssuesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/issuesroute/')
+        axios.get(myConstants.localUrl + myConstants.serverRoute)
+            // 'http://localhost:4000/issuesroute/')
             .then(res => {
                 this.setState({ allIssues: res.data });
             })
@@ -31,7 +43,8 @@ export default class IssuesList extends Component {
 
     componentDidUpdate() {
 // TODO extract into method since same as componentDidMount
-        axios.get('http://localhost:4000/issuesroute/')
+        axios.get(myConstants.localUrl + myConstants.serverRoute)
+            // 'http://localhost:4000/issuesroute/')
             .then(res => {
                 this.setState({ allIssues: res.data });
             })

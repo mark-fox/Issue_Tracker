@@ -4,6 +4,8 @@ import DatePicker from "react-datepicker/es";
 
 import 'react-datepicker/dist/react-datepicker.css';
 
+const myConstants = require('../helpers/interface');
+
 export default class NewIssue extends Component {
     constructor(props) {
         super(props);
@@ -72,7 +74,8 @@ export default class NewIssue extends Component {
             closed: this.state.closed
         };
 
-        axios.post('http://localhost:4000/issuesroute/add', newIssue)
+        axios.post(myConstants.localUrl + myConstants.serverRouteAdd, newIssue)
+        // axios.post('http://localhost:4000/issuesroute/add', newIssue)
             .then(function(res) {
                 console.log(res.data);
             });
