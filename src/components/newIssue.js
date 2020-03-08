@@ -60,7 +60,7 @@ export default class NewIssue extends Component {
 // TODO add check for past dates either here or onChange
         const newIssue = {
 // TODO implement issue number
-            issueNumber: 5,
+            issueNumber: this.state.issueNumber,
             subject: this.state.subject,
             status: this.state.status,
             priority: this.state.priority,
@@ -71,7 +71,8 @@ export default class NewIssue extends Component {
             lastUpdated: new Date(),
             dueDate: this.state.dueDate,
             createdDate: new Date(),
-            closed: this.state.closed
+            closed: this.state.closed,
+            closedDate: null
         };
 
         axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)

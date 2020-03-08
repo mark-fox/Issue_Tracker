@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const autoIncrement = require('mongoose-auto-increment');
 const issueRoutes = express.Router();
 const PORT = 4000;
 
@@ -13,7 +14,15 @@ app.use(bodyParser.json());
 
 // issues is database table name
 mongoose.connect('mongodb://127.0.0.1:27017/issues', {useNewUrlParser: true });
-const connection = mongoose.connection;
+let connection = mongoose.connection;
+// let connection = mongoose.createConnection('mongodb://127.0.0.1:27017/issues', {useNewUrlParser: true});
+autoIncrement.initialize(connection);
+
+// Issue.plugin(autoIncrement.plugin, {
+//     model: 'Issue',
+//     field: 'issueNumber',
+//     startAt: 1000
+// });
 
 connection.once('open', function() {
     console.log("mongodb connection established");

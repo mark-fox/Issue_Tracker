@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 let Issue = new Schema({
     issueNumber: {
-        type: Number
+        type: Number,
+        unique: true,
+        default: 0
     },
     subject: {
         type: String

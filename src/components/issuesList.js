@@ -55,6 +55,7 @@ export default class IssuesList extends Component {
 
     getIssueList() {
         return this.state.allIssues.map(function(currentIssue, i) {
+            console.log(currentIssue);
             return <Issue issue={currentIssue} key={i} />;
         })
     }
