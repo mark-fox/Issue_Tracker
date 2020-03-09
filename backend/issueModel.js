@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const autoIncrement = require('mongoose-auto-increment');
 
 let Issue = new Schema({
-    issueNumber: {
-        type: Number,
-        unique: true,
-        default: 0
-    },
+    // issueNumber: {
+    //     type: Number,
+    //     unique: true,
+    //     default: 0
+    // },
     subject: {
         type: String
     },
@@ -43,6 +44,13 @@ let Issue = new Schema({
     closed: {
         type: Boolean
     }
+});
+
+autoIncrement.initialize(mongoose.connection);
+Issue.plugin(autoIncrement.plugin, {
+    model: 'Issue',
+    field: 'issueNumberrrr',
+    startAt: 1000
 });
 
 module.exports = mongoose.model("Issue", Issue);

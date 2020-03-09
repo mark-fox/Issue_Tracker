@@ -42,3 +42,5 @@ export default App;
 // Resources:
 // https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1/
 // https://www.npmjs.com/package/react-datepicker
+// https://github.com/chevtek/mongoose-auto-increment
+// https://stackoverflow.com/questions/40979391/mongodb-and-nodejs-insert-id-with-auto-increment

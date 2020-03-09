@@ -19,7 +19,7 @@ export default class NewIssue extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            issueNumber: 0,
+            // issueNumber: 0,
             subject: "",
             status: "",
             priority: "",
@@ -60,7 +60,8 @@ export default class NewIssue extends Component {
 // TODO add check for past dates either here or onChange
         const newIssue = {
 // TODO implement issue number
-            issueNumber: this.state.issueNumber,
+
+//             issueNumber: this.state.issueNumber,
             subject: this.state.subject,
             status: this.state.status,
             priority: this.state.priority,
@@ -78,11 +79,13 @@ export default class NewIssue extends Component {
         axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
             .then(function(res) {
                 console.log(res.data);
+                console.log(newIssue);
             });
 
         this.setState({
 // TODO extract object to interface
-            issueNumber: 0,
+
+//             issueNumber: 0,
             subject: "",
             status: "",
             priority: "",

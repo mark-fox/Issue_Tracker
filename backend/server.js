@@ -7,7 +7,7 @@ const autoIncrement = require('mongoose-auto-increment');
 const issueRoutes = express.Router();
 const PORT = 4000;
 
-let Issue = require('./issueModel');
+// let Issue = require('./issueModel');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb://127.0.0.1:27017/issues', {useNewUrlParser: true });
 let connection = mongoose.connection;
 // let connection = mongoose.createConnection('mongodb://127.0.0.1:27017/issues', {useNewUrlParser: true});
-autoIncrement.initialize(connection);
+// autoIncrement.initialize(connection);
 
 // Issue.plugin(autoIncrement.plugin, {
 //     model: 'Issue',
@@ -27,6 +27,8 @@ autoIncrement.initialize(connection);
 connection.once('open', function() {
     console.log("mongodb connection established");
 });
+
+let Issue = require('./issueModel');
 
 issueRoutes.route('/').get(function(req, res) {
     Issue.find(function(err, issues) {
