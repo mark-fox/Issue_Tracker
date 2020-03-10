@@ -61,7 +61,7 @@ export default class NewIssue extends Component {
         const newIssue = {
 // TODO implement issue number
 
-//             issueNumber: this.state.issueNumber,
+            issueNumber: this.state.issueNumber,
             subject: this.state.subject,
             status: this.state.status,
             priority: this.state.priority,
@@ -79,7 +79,7 @@ export default class NewIssue extends Component {
         axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
             .then(function(res) {
                 console.log(res.data);
-                console.log(newIssue);
+                // console.log(newIssue);
             });
 
         this.setState({

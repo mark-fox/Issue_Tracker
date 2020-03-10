@@ -49,8 +49,11 @@ let Issue = new Schema({
 autoIncrement.initialize(mongoose.connection);
 Issue.plugin(autoIncrement.plugin, {
     model: 'Issue',
-    field: 'issueNumberrrr',
+    field: 'issueNumber',
     startAt: 1000
 });
+
+// console.log("issue model:");
+// console.log(Issue);
 
 module.exports = mongoose.model("Issue", Issue);

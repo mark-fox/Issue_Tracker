@@ -8,7 +8,7 @@ const Issue = props => (
     <tr>
 {/*TODO add Link here for issue number*/}
 {/*        <Link to={"/update/" + props.issue._id}>{props.issue.issueNumber}</Link>*/}
-        <td>issue placeholder</td>
+        <td>{props.issue.issueNumber}</td>
         <td>{props.issue.subject}</td>
         <td>{props.issue.status}</td>
         <td>{props.issue.assignedTo}</td>
@@ -31,31 +31,16 @@ export default class IssuesList extends Component {
     }
 
     componentDidMount() {
-        // axios.get(myConstants.localUrl + myConstants.serverRoute)
-        //     .then(res => {
-        //         this.setState({ allIssues: res.data });
-        //     })
-        //     .catch(function(err) {
-        //         console.log(err);
-        //     })
         this.issueListCall();
     }
 
     componentDidUpdate() {
-// TODO extract into method since same as componentDidMount
-//         axios.get(myConstants.localUrl + myConstants.serverRoute)
-//             .then(res => {
-//                 this.setState({ allIssues: res.data });
-//             })
-//             .catch(function(err) {
-//                 console.log(err);
-//             })
         this.issueListCall();
     }
 
     getIssueList() {
         return this.state.allIssues.map(function(currentIssue, i) {
-            console.log(currentIssue);
+            // console.log(currentIssue);
             return <Issue issue={currentIssue} key={i} />;
         })
     }
