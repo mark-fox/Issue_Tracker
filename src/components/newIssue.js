@@ -59,11 +59,9 @@ export default class NewIssue extends Component {
         e.preventDefault();
 // TODO add check for past dates either here or onChange
         const newIssue = {
-// TODO implement issue number
-
             issueNumber: this.state.issueNumber,
             subject: this.state.subject,
-            status: this.state.status,
+            status: myConstants.statusList[0].value,
             priority: this.state.priority,
             assignedTo: this.state.assignedTo,
 // TODO might need to calculate beforehand
@@ -115,7 +113,6 @@ export default class NewIssue extends Component {
                         <label>Priority: </label>
 {/*TODO add bootstrap and test*/}
                         <select value={this.state.priority} onChange={this.onChangePriority}>
-                        {/*    <option>Test</option>*/}
                             {myConstants.priorityList.map(({value, label}) =>
                                 <option value = {value}>{label}</option>
                             )}

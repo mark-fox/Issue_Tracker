@@ -6,9 +6,7 @@ const myConstants = require('../helpers/interface');
 const Issue = props => (
 // TODO rearrange columns as needed
     <tr>
-{/*TODO add Link here for issue number*/}
-{/*        <Link to={"/update/" + props.issue._id}>{props.issue.issueNumber}</Link>*/}
-        <td>{props.issue.issueNumber}</td>
+        <td><Link to={"/update/" + props.issue._id}>{props.issue.issueNumber}</Link></td>
         <td>{props.issue.subject}</td>
         <td>{props.issue.status}</td>
         <td>{props.issue.assignedTo}</td>
@@ -40,7 +38,6 @@ export default class IssuesList extends Component {
 
     getIssueList() {
         return this.state.allIssues.map(function(currentIssue, i) {
-            // console.log(currentIssue);
             return <Issue issue={currentIssue} key={i} />;
         })
     }

@@ -3,11 +3,6 @@ const Schema = mongoose.Schema;
 const autoIncrement = require('mongoose-auto-increment');
 
 let Issue = new Schema({
-    // issueNumber: {
-    //     type: Number,
-    //     unique: true,
-    //     default: 0
-    // },
     subject: {
         type: String
     },
@@ -53,7 +48,5 @@ Issue.plugin(autoIncrement.plugin, {
     startAt: 1000
 });
 
-// console.log("issue model:");
-// console.log(Issue);
 
 module.exports = mongoose.model("Issue", Issue);

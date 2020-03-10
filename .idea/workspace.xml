@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ba3b52b-21fc-4ab5-af00-12ec9ff47237" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/issueModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/issueModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/issuesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/issuesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/newIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/newIssue.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +84,7 @@
       <workItem from="1583538037796" duration="7902000" />
       <workItem from="1583621356625" duration="6554000" />
       <workItem from="1583737175304" duration="194000" />
-      <workItem from="1583804992463" duration="569000" />
+      <workItem from="1583804992463" duration="851000" />
     </task>
     <task id="LOCAL-00001" summary="Base commit">
       <created>1583101512951</created>
@@ -152,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583737315568</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Auto increment is working today">
+      <created>1583805615277</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583805615277</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +185,7 @@
     <MESSAGE value="Added 'enums' for dropdown lists to interface and began implementing into New Issue form" />
     <MESSAGE value="Attempted implementing mongoose-auto-increment for the issue number field" />
     <MESSAGE value="Moved auto-increment to Schema file and worked on figuring out implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved auto-increment to Schema file and worked on figuring out implementation" />
+    <MESSAGE value="Auto increment is working today" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auto increment is working today" />
   </component>
 </project>
