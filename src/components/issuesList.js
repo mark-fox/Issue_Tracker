@@ -10,17 +10,22 @@ const Issue = props => (
         <td>{props.issue.subject}</td>
         <td>{props.issue.status}</td>
         <td>{props.issue.assignedTo}</td>
-        <td>{props.issue.overdueDays}</td>
+        <td>{calculateOverdue(props.issue.dueDate, new Date())}</td>
         <td>{props.issue.priority}</td>
 {/*TODO format dates probably*/}
-        <td>{props.issue.lastUpdated}</td>
-        <td>{props.issue.dueDate}</td>
-        <td>{props.issue.createdDate}</td>
+        <td>{new Date(props.issue.lastUpdated).toLocaleDateString()}</td>
+        <td>{new Date(props.issue.dueDate).toLocaleDateString()}</td>
+        <td>{new Date(props.issue.createdDate).toLocaleDateString()}</td>
         <td>{props.issue.createdBy}</td>
 {/*TODO might not want closedDate; seems unnecessary*/}
-        <td>{props.issue.closedDate}</td>
+        <td>{new Date(props.issue.closedDate).toLocaleDateString()}</td>
     </tr>
 );
+
+function calculateOverdue(date1, date2) {
+// TODO figure out how to update database value or remove state from schema
+    return Math.round((Date.parse(date2) - Date.parse(date1)) / (1000 * 60 *60 *24));
+}
 
 export default class IssuesList extends Component {
     constructor(props) {
