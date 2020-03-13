@@ -3,11 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
 const issueRoutes = express.Router();
 const PORT = 4000;
-
-// let Issue = require('./issueModel');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,14 +12,6 @@ app.use(bodyParser.json());
 // issues is database table name
 mongoose.connect('mongodb://127.0.0.1:27017/issues', {useNewUrlParser: true });
 let connection = mongoose.connection;
-// let connection = mongoose.createConnection('mongodb://127.0.0.1:27017/issues', {useNewUrlParser: true});
-// autoIncrement.initialize(connection);
-
-// Issue.plugin(autoIncrement.plugin, {
-//     model: 'Issue',
-//     field: 'issueNumber',
-//     startAt: 1000
-// });
 
 connection.once('open', function() {
     console.log("mongodb connection established");
@@ -57,7 +46,7 @@ issueRoutes.route('/edit/:id').post(function(req, res) {
             issue.status = req.body.status;
             issue.priority = req.body.priority;
             issue.assignedTo = req.body.assignedTo;
-            // issue.overdueDays = req.body.overdueDays;
+            issue.overdueDays = req.body.overdueDays;
             issue.description = req.body.description;
             issue.lastUpdated = req.body.lastUpdated;
             issue.dueDate = req.body.dueDate;

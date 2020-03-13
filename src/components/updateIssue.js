@@ -12,7 +12,7 @@ export default class UpdateIssue extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            issueNumber: 0,
+            // issueNumber: 0,
             subject: "",
             status: "",
             priority: "",

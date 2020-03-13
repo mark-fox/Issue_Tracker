@@ -1,6 +1,6 @@
 // TODO test whether Date is new once used or if remains at runtime
 let cleanState = {
-    issueNumber: 0,
+    // issueNumber: 0,
     subject: "",
     status: "",
     priority: "",

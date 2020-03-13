@@ -12,7 +12,6 @@ const Issue = props => (
         <td>{props.issue.assignedTo}</td>
         <td>{calculateOverdue(props.issue.dueDate, new Date())}</td>
         <td>{props.issue.priority}</td>
-{/*TODO format dates probably*/}
         <td>{new Date(props.issue.lastUpdated).toLocaleDateString()}</td>
         <td>{new Date(props.issue.dueDate).toLocaleDateString()}</td>
         <td>{new Date(props.issue.createdDate).toLocaleDateString()}</td>
