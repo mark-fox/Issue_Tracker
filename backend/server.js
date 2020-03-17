@@ -4,7 +4,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const issueRoutes = express.Router();
+require('dotenv').config();
 const PORT = 4000;
+
+const hostTest = process.env.HOST;
+const portTest = process.env.PORT;
+console.log('host is: ' + hostTest + ' and port is ' + portTest);
 
 app.use(cors());
 app.use(bodyParser.json());
