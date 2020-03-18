@@ -81,22 +81,24 @@ export default class NewIssue extends Component {
                 // console.log(newIssue);
             });
 
-        this.setState({
-// TODO extract object to interface
-
-//             issueNumber: 0,
-            subject: "",
-            status: "",
-            priority: "",
-            assignedTo: "",
-            overdueDays: 0,
-            description: "",
-            lastUpdated: null,
-            dueDate: null,
-            createdDate: null,
-            closedDate: null,
-            closed: false
-        })
+        this.setState(myConstants.cleanState
+//             {
+// // TODO extract object to interface
+//
+// //             issueNumber: 0,
+//             subject: "",
+//             status: "",
+//             priority: "",
+//             assignedTo: "",
+//             overdueDays: 0,
+//             description: "",
+//             lastUpdated: null,
+//             dueDate: null,
+//             createdDate: null,
+//             closedDate: null,
+//             closed: false
+//         }
+        )
     }
 
     onCancel(e) {
@@ -112,7 +114,12 @@ export default class NewIssue extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Subject: </label>
-                        <input type="text" className="form-control" value={this.state.subject} onChange={this.onChangeSubject}/>
+                        <input type="text"
+                               className="form-control"
+                               value={this.state.subject}
+                               onChange={this.onChangeSubject}
+                               required
+                        />
                     </div>
 
                     <div className="form-group">
@@ -135,15 +142,21 @@ export default class NewIssue extends Component {
 
                     <div className="form-group">
                         <label>Description: </label>
-                        <textarea className="form-control" value={this.state.description} onChange={this.onChangeDescription}></textarea>
+                        <textarea className="form-control"
+                                  value={this.state.description}
+                                  onChange={this.onChangeDescription}
+                                  required> </textarea>
                     </div>
+
                     <div className="form-group">
                         <label>Due Date: </label>
                         <DatePicker
                             selected={this.state.dueDate}
                             onChange={this.onChangeDueDate}
+                            minDate={new Date()}
                         />
                     </div>
+
                     <div className="form-group">
                         <input type="submit" value="Create New Issue" className="btn btn-primary" />
                         <button onClick={this.onCancel} value="Cancel" className="btn btn-secondary">Cancel</button>

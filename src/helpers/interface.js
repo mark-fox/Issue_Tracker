@@ -1,14 +1,14 @@
 // TODO test whether Date is new once used or if remains at runtime
 let cleanState = {
-    // issueNumber: 0,
+    issueNumber: null,
     subject: "",
     status: "",
     priority: "",
     assignedTo: "",
-    overdueDays: 0,
+    overdueDays: null,
     description: "",
     lastUpdated: null,
-    dueDate: new Date(),
+    dueDate: null,
     createdDate: null,
     closedDate: null,
     closed: false
