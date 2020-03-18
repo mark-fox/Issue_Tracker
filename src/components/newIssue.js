@@ -17,6 +17,7 @@ export default class NewIssue extends Component {
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeDueDate = this.onChangeDueDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.onCancel = this.onCancel.bind(this);
 
         this.state = {
             // issueNumber: 0,
@@ -98,9 +99,14 @@ export default class NewIssue extends Component {
         })
     }
 
+    onCancel(e) {
+// TODO replace with Redirect
+        this.props.history.push('/');
+    }
+
     render() {
         return (
-// TODO modify the size of fields
+// TODO modify the size (width) of fields
             <div style={{marginTop: 10}}>
                 <h3>New Issue</h3>
                 <form onSubmit={this.onSubmit}>
@@ -140,8 +146,8 @@ export default class NewIssue extends Component {
                     </div>
                     <div className="form-group">
                         <input type="submit" value="Create New Issue" className="btn btn-primary" />
+                        <button onClick={this.onCancel} value="Cancel" className="btn btn-secondary">Cancel</button>
                     </div>
-{/*TODO add a cancel button*/}
                 </form>
             </div>
         )
