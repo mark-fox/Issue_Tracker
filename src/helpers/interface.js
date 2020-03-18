@@ -37,6 +37,8 @@ const priorityList = [
     {value: 'Critical', label: 'Critical'}
 ];
 
+// Number of milliseconds in a day for calculating overdue days
+const dailyMilliseconds = 1000 * 60 * 60 * 24;
 
 
 
@@ -47,5 +49,6 @@ module.exports = {
     serverRouteAdd,
     serverRouteEdit,
     statusList,
-    priorityList
+    priorityList,
+    dailyMilliseconds
 };

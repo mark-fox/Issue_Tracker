@@ -23,7 +23,7 @@ const Issue = props => (
 
 function calculateOverdue(date1, date2) {
 // TODO figure out how to update database value or remove state from schema
-    return Math.round((Date.parse(date2) - Date.parse(date1)) / (1000 * 60 *60 *24));
+    return Math.round((new Date(date2) - new Date(date1)) / myConstants.dailyMilliseconds);
 }
 
 export default class IssuesList extends Component {
