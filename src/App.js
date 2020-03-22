@@ -44,3 +44,4 @@ export default App;
 // https://www.npmjs.com/package/react-datepicker
 // https://github.com/chevtek/mongoose-auto-increment
 // https://stackoverflow.com/questions/40979391/mongodb-and-nodejs-insert-id-with-auto-increment
+// https://stackoverflow.com/questions/5805059/how-do-i-make-a-placeholder-for-a-select-box

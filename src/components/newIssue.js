@@ -20,20 +20,6 @@ export default class NewIssue extends Component {
         this.onCancel = this.onCancel.bind(this);
 
         this.state = myConstants.cleanState
-        //     {
-        //     // issueNumber: 0,
-        //     subject: "",
-        //     status: "",
-        //     priority: "",
-        //     assignedTo: "",
-        //     overdueDays: 0,
-        //     description: "",
-        //     lastUpdated: null,
-        //     dueDate: new Date(),
-        //     createdDate: null,
-        //     closedDate: null,
-        //     closed: false
-        // }
     }
 
     onChangeSubject(e) {
@@ -63,7 +49,6 @@ export default class NewIssue extends Component {
         e.preventDefault();
 
         console.log('what is passed onsubmit:');
-        // console.log(e.target.value);
         console.log(e.target);
         console.log(e.target.elements);
 
@@ -150,10 +135,10 @@ export default class NewIssue extends Component {
                     <div className="form-group">
                         <label>Due Date: </label>
                         <DatePicker
-                            selected={new Date()}
+                            // selected={new Date()}
                             onChange={this.onChangeDueDate}
                             minDate={new Date()}
-                            defaultValue={new Date()}
+                            // defaultValue={new Date()}
                             required
                         />
                     </div>

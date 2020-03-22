@@ -16,8 +16,6 @@ const Issue = props => (
         <td>{new Date(props.issue.dueDate).toLocaleDateString()}</td>
         <td>{new Date(props.issue.createdDate).toLocaleDateString()}</td>
         <td>{props.issue.createdBy}</td>
-{/*TODO might not want closedDate; seems unnecessary*/}
-        <td>{new Date(props.issue.closedDate).toLocaleDateString()}</td>
     </tr>
 );
 
@@ -75,8 +73,6 @@ export default class IssuesList extends Component {
                         <th>Due Date</th>
                         <th>Created Date</th>
                         <th>Created By</th>
-                        <th>Closed Date</th>
-{/*TODO removed description since probably not needed in this part*/}
                     </tr>
                     </thead>
                     <tbody>
