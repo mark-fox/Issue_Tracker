@@ -19,20 +19,21 @@ export default class NewIssue extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.onCancel = this.onCancel.bind(this);
 
-        this.state = {
-            // issueNumber: 0,
-            subject: "",
-            status: "",
-            priority: "",
-            assignedTo: "",
-            overdueDays: 0,
-            description: "",
-            lastUpdated: null,
-            dueDate: new Date(),
-            createdDate: null,
-            closedDate: null,
-            closed: false
-        }
+        this.state = myConstants.cleanState
+        //     {
+        //     // issueNumber: 0,
+        //     subject: "",
+        //     status: "",
+        //     priority: "",
+        //     assignedTo: "",
+        //     overdueDays: 0,
+        //     description: "",
+        //     lastUpdated: null,
+        //     dueDate: new Date(),
+        //     createdDate: null,
+        //     closedDate: null,
+        //     closed: false
+        // }
     }
 
     onChangeSubject(e) {
@@ -41,10 +42,12 @@ export default class NewIssue extends Component {
 
     onChangePriority(e) {
         this.setState({priority: e.target.value});
+        console.log('priority: ' + e.target.value);
     }
 
     onChangeAssignedTo(e) {
         this.setState({assignedTo: e.target.value});
+        console.log('assignedTo: ' + e.target.value);
     }
 
     onChangeDescription(e) {
@@ -58,7 +61,12 @@ export default class NewIssue extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-// TODO add check for past dates either here or onChange
+
+        console.log('what is passed onsubmit:');
+        // console.log(e.target.value);
+        console.log(e.target);
+        console.log(e.target.elements);
+
         const newIssue = {
             issueNumber: this.state.issueNumber,
             subject: this.state.subject,
@@ -71,34 +79,21 @@ export default class NewIssue extends Component {
             lastUpdated: new Date(),
             dueDate: this.state.dueDate,
             createdDate: new Date(),
+// TODO retrieve user once login system is implemented
+            createdBy: 'TheCreator', // this.state.createdBy,
             closed: this.state.closed,
             closedDate: null
         };
 
-        axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
-            .then(function(res) {
-                console.log(res.data);
-                // console.log(newIssue);
-            });
+// TODO uncomment once done testing updating all states on submit
+        // axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
+        //     .then(function(res) {
+        //         console.log(res.data);
+        console.log('newIssue:');
+                console.log(newIssue);
+        //     });
 
-        this.setState(myConstants.cleanState
-//             {
-// // TODO extract object to interface
-//
-// //             issueNumber: 0,
-//             subject: "",
-//             status: "",
-//             priority: "",
-//             assignedTo: "",
-//             overdueDays: 0,
-//             description: "",
-//             lastUpdated: null,
-//             dueDate: null,
-//             createdDate: null,
-//             closedDate: null,
-//             closed: false
-//         }
-        )
+        this.setState(myConstants.cleanState)
     }
 
     onCancel(e) {
@@ -125,7 +120,8 @@ export default class NewIssue extends Component {
                     <div className="form-group">
                         <label>Priority: </label>
 {/*TODO add bootstrap and test*/}
-                        <select value={this.state.priority} onChange={this.onChangePriority}>
+                        <select value={this.state.priority} onChange={this.onChangePriority} required>
+                            <option disabled value="">Select...</option>
                             {myConstants.priorityList.map(({value, label}) =>
                                 <option value = {value}>{label}</option>
                             )}
@@ -135,7 +131,10 @@ export default class NewIssue extends Component {
                     <div className="form-group">
                         <label>Assign To: </label>
 {/*TODO query all users and add this here*/}
-                        <select value={this.state.assignedTo} onChange={this.onChangeAssignedTo}>
+                        <select value={this.state.assignedTo}
+                                onChange={this.onChangeAssignedTo}
+                            required>
+                            <option disabled value="">Select...</option>
                             <option>TestUser</option>
                         </select>
                     </div>
@@ -151,9 +150,11 @@ export default class NewIssue extends Component {
                     <div className="form-group">
                         <label>Due Date: </label>
                         <DatePicker
-                            selected={this.state.dueDate}
+                            selected={new Date()}
                             onChange={this.onChangeDueDate}
                             minDate={new Date()}
+                            defaultValue={new Date()}
+                            required
                         />
                     </div>
 

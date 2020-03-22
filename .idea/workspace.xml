@@ -97,7 +97,12 @@
       <workItem from="1584052789838" duration="2153000" />
       <workItem from="1584143651111" duration="612000" />
       <workItem from="1584228150514" duration="1484000" />
-      <workItem from="1584488073722" duration="4561000" />
+      <workItem from="1584488073722" duration="7535000" />
+      <workItem from="1584570005769" duration="1852000" />
+      <workItem from="1584654613855" duration="1270000" />
+      <workItem from="1584732652726" duration="607000" />
+      <workItem from="1584822622036" duration="687000" />
+      <workItem from="1584895724238" duration="2996000" />
     </task>
     <task id="LOCAL-00001" summary="Base commit">
       <created>1583101512951</created>
@@ -211,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584499857936</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Required fields, implemented interface state with newIssue, and put min date limit on DatePicker field">
+      <created>1584500543477</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1584500543477</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +259,7 @@
     <MESSAGE value="Added setup for env variables" />
     <MESSAGE value="Added constant milliseconds value to interface and replaced Date.parse() with new Date()" />
     <MESSAGE value="Added simple cancel button (at least for now)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added simple cancel button (at least for now)" />
+    <MESSAGE value="Required fields, implemented interface state with newIssue, and put min date limit on DatePicker field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Required fields, implemented interface state with newIssue, and put min date limit on DatePicker field" />
   </component>
 </project>
