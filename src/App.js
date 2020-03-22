@@ -45,3 +45,4 @@ export default App;
 // https://github.com/chevtek/mongoose-auto-increment
 // https://stackoverflow.com/questions/40979391/mongodb-and-nodejs-insert-id-with-auto-increment
 // https://stackoverflow.com/questions/5805059/how-do-i-make-a-placeholder-for-a-select-box
+// https://stackabuse.com/managing-environment-variables-in-node-js-with-dotenv/

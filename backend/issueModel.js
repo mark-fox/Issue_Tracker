@@ -45,7 +45,7 @@ autoIncrement.initialize(mongoose.connection);
 Issue.plugin(autoIncrement.plugin, {
     model: 'Issue',
     field: 'issueNumber',
-    startAt: 1000
+    startAt: 2000
 });
 
 

@@ -71,12 +71,12 @@ export default class NewIssue extends Component {
         };
 
 // TODO uncomment once done testing updating all states on submit
-        // axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
-        //     .then(function(res) {
-        //         console.log(res.data);
+        axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteAdd, newIssue)
+            .then(function(res) {
+                console.log(res.data);
         console.log('newIssue:');
                 console.log(newIssue);
-        //     });
+            });
 
         this.setState(myConstants.cleanState)
     }
@@ -135,7 +135,7 @@ export default class NewIssue extends Component {
                     <div className="form-group">
                         <label>Due Date: </label>
                         <DatePicker
-                            // selected={new Date()}
+                            selected={this.state.dueDate}
                             onChange={this.onChangeDueDate}
                             minDate={new Date()}
                             // defaultValue={new Date()}
