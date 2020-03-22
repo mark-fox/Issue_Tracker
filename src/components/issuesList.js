@@ -6,7 +6,7 @@ const myConstants = require('../helpers/interface');
 const Issue = props => (
 // TODO rearrange columns as needed
     <tr>
-        <td><Link to={"/update/" + props.issue._id}>{props.issue.issueNumber}</Link></td>
+        <td><Link to={"/update" + props.issue._id}>{props.issue.issueNumber}</Link></td>
         <td>{props.issue.subject}</td>
         <td>{props.issue.status}</td>
         <td>{props.issue.assignedTo}</td>
@@ -25,6 +25,7 @@ function calculateOverdue(date1, date2) {
 }
 
 export default class IssuesList extends Component {
+    _isMounted = false;
     constructor(props) {
         super(props);
         this.state = { allIssues: [] };
@@ -38,6 +39,10 @@ export default class IssuesList extends Component {
         this.issueListCall();
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     getIssueList() {
         return this.state.allIssues.map(function(currentIssue, i) {
             return <Issue issue={currentIssue} key={i} />;
@@ -45,13 +50,17 @@ export default class IssuesList extends Component {
     }
 
     issueListCall() {
+        this._isMounted = true;
         axios.get(myConstants.localUrl + myConstants.serverRoute)
             .then(res => {
-                this.setState({ allIssues: res.data });
+                if (this._isMounted) {
+                    this.setState({allIssues: res.data});
+                }
             })
             .catch(function(err) {
                 console.log(err);
-            })
+            });
+        // return () => this._isMounted = false;
     }
 
     render() {
