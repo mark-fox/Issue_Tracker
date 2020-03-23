@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba3b52b-21fc-4ab5-af00-12ec9ff47237" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/issuesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/issuesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/updateIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/updateIssue.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,7 +102,7 @@
       <workItem from="1584654613855" duration="1270000" />
       <workItem from="1584732652726" duration="607000" />
       <workItem from="1584822622036" duration="687000" />
-      <workItem from="1584895724238" duration="12320000" />
+      <workItem from="1584895724238" duration="13880000" />
     </task>
     <task id="LOCAL-00001" summary="Base commit">
       <created>1583101512951</created>
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584920123710</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added class variable to track component mounting and unmounting">
+      <created>1584921583113</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1584921583113</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +299,7 @@
     <MESSAGE value="Removed Closed Date field from table and did some minor cleanup" />
     <MESSAGE value="Added axios call back to newIssue and tested with cleared database" />
     <MESSAGE value="Added additional fields and features in updateIssue component to somewhat resemble newIssue component. &#10;Currently, experiencing issue loading individual page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added additional fields and features in updateIssue component to somewhat resemble newIssue component. &#10;Currently, experiencing issue loading individual page." />
+    <MESSAGE value="Added class variable to track component mounting and unmounting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added class variable to track component mounting and unmounting" />
   </component>
 </project>

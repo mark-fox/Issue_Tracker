@@ -7,7 +7,7 @@ export default class UpdateIssue extends Component {
     _isMounted = false;
     constructor(props) {
         super(props);
-        console.log('update constructor reached');
+        // console.log('update constructor reached');
         this.onChangeSubject = this.onChangeSubject.bind(this);
         this.onChangeStatus = this.onChangeStatus.bind(this);
         this.onChangePriority = this.onChangePriority.bind(this);
@@ -21,7 +21,7 @@ export default class UpdateIssue extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        console.log('update before axios get');
+        // console.log('update before axios get');
         axios.get(myConstants.localUrl + myConstants.serverRoute
         + this.props.match.params.id)
             .then(res => {
@@ -81,11 +81,18 @@ export default class UpdateIssue extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        if (this.state.status === myConstants.statusList[1]) {
-            this.setState({
-                closedDate: new Date(),
-                closed: true
-            });
+        console.log('status: ' + this.state.status);
+        console.log('constant: ' + myConstants.statusList[1].value);
+        console.log('t/f: ' + (this.state.status === myConstants.statusList[1].value));
+
+        if (this.state.status === myConstants.statusList[1].value) {
+            console.log('true statement');
+            // this.setState({
+            //     closedDate: new Date(),
+            //     closed: true
+            // });
+            this.state.closedDate = new Date();
+            this.state.closed = true;
         }
         const obj = {
 // TODO not sure if need to update all values here
@@ -103,13 +110,13 @@ export default class UpdateIssue extends Component {
         };
         console.log('update obj:');
         console.log(obj);
-        // axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteEdit
-        //     // 'http://localhost:4000/issuesroute/edit'
-        //     + this.props.match.params.id, obj)
-        //     .then(function(res) {
-        //         console.log(res.data)
-        //     });
-        // this.props.history.push('/');
+        axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteEdit
+            // 'http://localhost:4000/issuesroute/edit'
+            + this.props.match.params.id, obj)
+            .then(function(res) {
+                console.log(res.data)
+            });
+        this.props.history.push('/');
     }
 
     render() {

@@ -56,7 +56,7 @@ issueRoutes.route('/edit/:id').post(function(req, res) {
             issue.lastUpdated = req.body.lastUpdated;
             issue.dueDate = req.body.dueDate;
             // issue.createdDate = req.body.createdDate;
-            // issue.closedDate = req.body.closedDate;
+            issue.closedDate = req.body.closedDate;
             issue.closed = req.body.closed;
 
             issue.save().then(function(issue) {
