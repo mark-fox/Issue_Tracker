@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import functions from '../helpers/sharedFunctions';
 
 const myConstants = require('../helpers/interface');
 const Issue = props => (
@@ -10,7 +11,7 @@ const Issue = props => (
         <td>{props.issue.subject}</td>
         <td>{props.issue.status}</td>
         <td>{props.issue.assignedTo}</td>
-        <td>{calculateOverdue(props.issue.dueDate, new Date())}</td>
+        <td>{functions.calculateOverdueDays(props.issue.dueDate, new Date())}</td>
         <td>{props.issue.priority}</td>
         <td>{new Date(props.issue.lastUpdated).toLocaleDateString()}</td>
         <td>{new Date(props.issue.dueDate).toLocaleDateString()}</td>
@@ -19,10 +20,11 @@ const Issue = props => (
     </tr>
 );
 
-function calculateOverdue(date1, date2) {
-// TODO figure out how to update database value or remove state from schema
-    return Math.round((new Date(date2) - new Date(date1)) / myConstants.dailyMilliseconds);
-}
+// function calculateOverdue(date1, date2) {
+// // TODO figure out how to update database value or remove state from schema
+
+//     return Math.round((new Date(date2) - new Date(date1)) / myConstants.dailyMilliseconds);
+// }
 
 export default class IssuesList extends Component {
     _isMounted = false;

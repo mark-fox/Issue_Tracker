@@ -84,7 +84,7 @@ export default class UpdateIssue extends Component {
         console.log('status: ' + this.state.status);
         console.log('constant: ' + myConstants.statusList[1].value);
         console.log('t/f: ' + (this.state.status === myConstants.statusList[1].value));
-
+// TODO add preventative measures for changing already closed Issue
         if (this.state.status === myConstants.statusList[1].value) {
             console.log('true statement');
             // this.setState({
