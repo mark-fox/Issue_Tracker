@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NewIssue from "./components/newIssue";
 import UpdateIssue from "./components/updateIssue";
 import IssuesList from "./components/issuesList";
+import DeleteIssue from "./components/deleteIssue";
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/" exact component={IssuesList} />
             <Route path="/update:id" component={UpdateIssue} />
             <Route path="/new" component={NewIssue} />
+            <Route path="/delete:id" component={DeleteIssue} />
           </div>
         </Router>
     );

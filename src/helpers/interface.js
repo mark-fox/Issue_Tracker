@@ -18,6 +18,7 @@ const localUrl = 'http://localhost:4000/';
 const serverRoute = 'issuesroute/';
 const serverRouteAdd = 'add/';
 const serverRouteEdit = 'edit/';
+const serverRouteDelete = 'delete/';
 
 
 // "ENUMS"
@@ -48,6 +49,7 @@ module.exports = {
     serverRoute,
     serverRouteAdd,
     serverRouteEdit,
+    serverRouteDelete,
     statusList,
     priorityList,
     dailyMilliseconds

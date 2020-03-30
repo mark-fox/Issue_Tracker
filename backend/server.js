@@ -79,6 +79,18 @@ issueRoutes.route('/add').post(function(req, res) {
         });
 });
 
+issueRoutes.route('/delete/:id').delete(function(req, res, next) {
+    Issue.findByIdAndRemove(req.params.id, function(err, data) {
+        if (err) {
+            return next(err);
+        } else {
+            res.status(200).json({
+                msg: data
+            })
+        }
+    })
+});
+
 app.use('/issuesroute', issueRoutes);
 
 app.listen(PORT, function() {

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ba3b52b-21fc-4ab5-af00-12ec9ff47237" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/helpers/sharedFunctions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/deleteIssue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/issuesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/issuesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/updateIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/updateIssue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/interface.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +107,9 @@
       <workItem from="1584822622036" duration="687000" />
       <workItem from="1584895724238" duration="14887000" />
       <workItem from="1584978768346" duration="1250000" />
-      <workItem from="1585148862937" duration="1860000" />
+      <workItem from="1585148862937" duration="3647000" />
+      <workItem from="1585432537052" duration="633000" />
+      <workItem from="1585519021335" duration="7381000" />
     </task>
     <task id="LOCAL-00001" summary="Base commit">
       <created>1583101512951</created>
@@ -268,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584923168476</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Created new helper file for shared functions">
+      <created>1585157748613</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1585157748613</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +322,7 @@
     <MESSAGE value="Added additional fields and features in updateIssue component to somewhat resemble newIssue component. &#10;Currently, experiencing issue loading individual page." />
     <MESSAGE value="Added class variable to track component mounting and unmounting" />
     <MESSAGE value="setState wasn't updating values during update so added workaround" />
-    <option name="LAST_COMMIT_MESSAGE" value="setState wasn't updating values during update so added workaround" />
+    <MESSAGE value="Created new helper file for shared functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new helper file for shared functions" />
   </component>
 </project>

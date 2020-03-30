@@ -17,6 +17,7 @@ const Issue = props => (
         <td>{new Date(props.issue.dueDate).toLocaleDateString()}</td>
         <td>{new Date(props.issue.createdDate).toLocaleDateString()}</td>
         <td>{props.issue.createdBy}</td>
+        <td><Link to={"/delete" + props.issue._id}>Delete</Link></td>
     </tr>
 );
 
@@ -31,6 +32,8 @@ export default class IssuesList extends Component {
     constructor(props) {
         super(props);
         this.state = { allIssues: [] };
+
+        // this.deleteIssue = this.deleteIssue.bind(this);
     }
 
     componentDidMount() {
@@ -65,6 +68,17 @@ export default class IssuesList extends Component {
         // return () => this._isMounted = false;
     }
 
+    // deleteIssue() {
+    //     console.log('before axios delete call');
+    //     console.log('id: ' + this.props.issue._id);
+    //     axios.delete(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteDelete + this.props.issue._id)
+    //         .then((res) => {
+    //             console.log('issue deleted: ' + this.props.issue._id)
+    //         }).catch((err) => {
+    //             console.log(err);
+    //     })
+    // }
+
     render() {
         return (
             <div>
@@ -84,6 +98,7 @@ export default class IssuesList extends Component {
                         <th>Due Date</th>
                         <th>Created Date</th>
                         <th>Created By</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
