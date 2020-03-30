@@ -46,7 +46,6 @@ issueRoutes.route('/edit/:id').post(function(req, res) {
         if (!issue) {
             res.status(404).send("data is not found");
         } else {
-            // issue.issueNumber = req.body.issueNumber;
             issue.subject = req.body.subject;
             issue.status = req.body.status;
             issue.priority = req.body.priority;
@@ -55,7 +54,6 @@ issueRoutes.route('/edit/:id').post(function(req, res) {
             issue.description = req.body.description;
             issue.lastUpdated = req.body.lastUpdated;
             issue.dueDate = req.body.dueDate;
-            // issue.createdDate = req.body.createdDate;
             issue.closedDate = req.body.closedDate;
             issue.closed = req.body.closed;
 

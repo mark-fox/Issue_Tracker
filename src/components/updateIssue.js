@@ -7,7 +7,6 @@ export default class UpdateIssue extends Component {
     _isMounted = false;
     constructor(props) {
         super(props);
-        // console.log('update constructor reached');
         this.onChangeSubject = this.onChangeSubject.bind(this);
         this.onChangeStatus = this.onChangeStatus.bind(this);
         this.onChangePriority = this.onChangePriority.bind(this);
@@ -21,7 +20,6 @@ export default class UpdateIssue extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        // console.log('update before axios get');
         axios.get(myConstants.localUrl + myConstants.serverRoute
         + this.props.match.params.id)
             .then(res => {
@@ -32,7 +30,6 @@ export default class UpdateIssue extends Component {
                         status: res.data.status,
                         priority: res.data.priority,
                         assignedTo: res.data.priority,
-// TODO create helper file with shared functions
 // TODO implement overdueDays function
                         overdueDays: res.data.overdueDays,
                         description: res.data.description,
@@ -95,8 +92,6 @@ export default class UpdateIssue extends Component {
             this.state.closed = true;
         }
         const obj = {
-// TODO not sure if need to update all values here
-// TODO test whether leaving state out (createdDate) becomes null or causes error
             subject: this.state.subject,
             status: this.state.status,
             priority: this.state.priority,
@@ -110,9 +105,8 @@ export default class UpdateIssue extends Component {
         };
         console.log('update obj:');
         console.log(obj);
-        axios.post(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteEdit
-            // 'http://localhost:4000/issuesroute/edit'
-            + this.props.match.params.id, obj)
+        axios.post(myConstants.localUrl + myConstants.serverRoute +
+            myConstants.serverRouteEdit + this.props.match.params.id, obj)
             .then(function(res) {
                 console.log(res.data)
             });

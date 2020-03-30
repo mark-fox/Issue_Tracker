@@ -21,19 +21,12 @@ const Issue = props => (
     </tr>
 );
 
-// function calculateOverdue(date1, date2) {
-// // TODO figure out how to update database value or remove state from schema
-
-//     return Math.round((new Date(date2) - new Date(date1)) / myConstants.dailyMilliseconds);
-// }
 
 export default class IssuesList extends Component {
     _isMounted = false;
     constructor(props) {
         super(props);
         this.state = { allIssues: [] };
-
-        // this.deleteIssue = this.deleteIssue.bind(this);
     }
 
     componentDidMount() {
@@ -65,19 +58,7 @@ export default class IssuesList extends Component {
             .catch(function(err) {
                 console.log(err);
             });
-        // return () => this._isMounted = false;
     }
-
-    // deleteIssue() {
-    //     console.log('before axios delete call');
-    //     console.log('id: ' + this.props.issue._id);
-    //     axios.delete(myConstants.localUrl + myConstants.serverRoute + myConstants.serverRouteDelete + this.props.issue._id)
-    //         .then((res) => {
-    //             console.log('issue deleted: ' + this.props.issue._id)
-    //         }).catch((err) => {
-    //             console.log(err);
-    //     })
-    // }
 
     render() {
         return (
